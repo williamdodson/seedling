@@ -1,15 +1,16 @@
-// Colors
+// Colors: these colors rely on the palette function and color maps
+//         from _config.scss
 //////////////////////////////////////////////////////////////////////
-$color-primary: #343434;
-$color-primary-light: #555;
-$color-secondary: #777;
-$color-secondary-light: #999;
-$color-secondary-pale: #ddd;
-$color-white: #f3f3f3;
+$color-primary: palette(primary);
+$color-primary-light: palette(primary, light);
+$color-secondary: palette(secondary);
+$color-secondary-light: palette(secondary, light);
+$color-secondary-pale: palette(secondary, x-light);
+$color-white: palette(primary, xx-light);
 //
-$color-links: #3366FF;
-$color-links-secondary: darken($color-links, 21);
+$color-links: palette(blue);
+$color-links-secondary: palette(blue, dark);
 //
-$color-error: #F5003D;
-$color-warning: #F5B800;
-$color-success: #2EB800;
+$color-error: palette(flashes, error);
+$color-warning: palette(flashes, warning);
+$color-success: palette(flashes, success);
