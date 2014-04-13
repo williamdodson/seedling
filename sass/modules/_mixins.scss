@@ -1,0 +1,159 @@
+// Functions
+//////////////////////////////////////////////////
+
+// calculateRem
+// 
+// Calculates the relative em (rem) value
+// for a given pixel value
+//
+// @param {string} $size the pixel value to convert to rem (e.g. 14px)
+@function calculateRem($size) {
+  @if $size == 0 {
+    @return 0;
+  } @else {
+    $rem-size: $size / 16px;
+    @return $rem-size * 1rem;
+  }
+}
+
+// Mixins
+//////////////////////////////////////////////////
+
+// Box Sizing
+//
+// @param {string} $value a valid value (content-box | padding-box | border-box | inherit)
+@mixin box-sizing($value: border-box) {
+  -webkit-box-sizing: $value;
+  -moz-box-sizing: $value;
+  box-sizing: $value;
+}
+
+// font-size
+// 
+// Generates a relative em (rem) font size value
+// with a pixel value fallback
+//
+// @param {string} $size the pixel value to convert to rem (e.g. 14px)
+@mixin font-size($size) {
+  font-size: $size;
+  font-size: calculateRem($size);
+}
+
+// margin
+// 
+// Generates relative em (rem) margin values
+// with pixel value fallbacks
+//
+// @param {string} $size the pixel value to convert to rem (e.g. 14px)
+@mixin margin($top, $right, $bottom, $left) {
+  margin: $top $right $bottom $left;
+  margin: calculateRem($top) calculateRem($right) calculateRem($bottom) calculateRem($left);
+}
+
+// Omega Reset Mixin
+//////////////////////////////////////////////////////////////////////
+@mixin omega-reset($nth) {
+  &:nth-child(#{$nth}) { margin-right: flex-gutter(); }
+  &:nth-child(#{$nth}+1) { clear: none }
+}
+
+// Button Mixin
+//////////////////////////////////////////////////////////////////////
+@mixin btn(
+    $color: $color-primary,
+    $border-radius: false,
+    $padding: $base-button-padding,
+    $disabled: false
+  ) {
+  background: $color;
+  
+  @if $border-radius {
+    border-radius: $border-radius;
+  }
+  color: $color-white;
+  display: inline-block;
+  padding: $padding;
+  text-align: center;
+  text-decoration: none !important;
+  
+  @if $disabled == false {
+    @include transition-property(all);
+    @include transition-duration($transition-speed);
+    text-shadow: 0.0625em 0.0625em 0 rgba(red(darken($color, 14)), green(darken($color, 14)), blue(darken($color, 14)), 0.56);
+  } @else {
+    color: $color-secondary-light;
+    cursor: not-allowed;
+    @include transition-property(none);
+    @include transition-duration(0);
+    text-shadow: none;
+  }
+  
+  &:focus,
+  &:hover,
+  &:active {
+    @if $disabled == false {
+      background: darken($color, 14);
+    }
+  }
+}
+
+// Flash Messages Mixin
+//////////////////////////////////////////////////////////////////////
+@mixin flash(
+    $color, 
+    $darken-text-amount: 50,
+    $darken-link-text-amount: 60,
+    $darken-link-text-hover-amount: 70,
+    $border-radius: true
+  ) {
+  background: $color;
+  border: 0.0625em solid darken($color, $darken-text-amount);
+  @if $border-radius {
+    border-radius: $base-border-radius;
+  }
+  color: darken($color, $darken-text-amount);
+  font-weight: bold;
+  margin-bottom: #{$base-line-height / 2}em;
+  padding: #{$base-line-height / 2}em;
+
+  a {
+    color: darken($color, $darken-link-text-amount);
+
+    &:hover {
+      color: darken($color, $darken-link-text-hover-amount);
+    }
+  }
+}
+
+// Label Mixin
+//////////////////////////////////////////////////////////////////////
+@mixin label(
+    $color: $color-primary,
+    $border-radius: true
+  ) {
+  background: $color;
+  @if $border-radius {
+    border-top-right-radius: $base-border-radius;
+    border-bottom-right-radius: $base-border-radius;
+  }
+  color: $color-white;
+  display: inline-block;
+  font-size: 1em;
+  line-height: 1;
+  margin-left: 1em;
+  padding: 0.25em 0.5em;
+  position: relative;
+  text-shadow: 0.0625em 0.0625em 0 rgba(red(darken($color, 14)), green(darken($color, 14)), blue(darken($color, 14)), 0.56);
+  
+  &:before {
+  	border-top: 0.75em solid transparent;
+  	border-bottom: 0.75em solid transparent;  	
+  	border-right: 0.75em solid $color;
+  	content: ' ';
+  	height: 0;
+  	position: absolute;
+  	right: 100%;
+  	top: 0;//18.75%;
+  	width: 0;
+  }
+}

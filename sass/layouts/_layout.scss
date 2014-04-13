@@ -1,0 +1,40 @@
+// Mobile and small screen layout
+//////////////////////////////////////////////////////////////////////
+
+// Top
+//////////////////////////////////////////////////////////////////////
+.top {
+  background: $color-primary;
+  @extend %wrap;
+}
+
+.masthead {
+  @extend %container;
+  position: relative;
+}
+
+.title,
+.nav {
+  @include span-columns(12);
+}
+
+// Primary
+//////////////////////////////////////////////////////////////////////
+.primary {
+  @extend %wrap;
+  
+}
+.container {
+  @extend %container;
+}
+
+// Bottom
+//////////////////////////////////////////////////////////////////////
+.bottom {
+  background: $color-primary;
+  @extend %wrap;
+}
+
+.footer {
+  @extend %container;
+}

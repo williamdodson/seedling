@@ -1,0 +1,18 @@
+# Define your main navigation links and their slugs here
+- name: 'Home'
+  slug: 
+
+- name: 'About'
+  slug: 'about'
+  subpages:
+    - name: 'Staff'
+      slug: 'staff'
+        
+    - name: 'Job Openings'
+      slug: 'jobs'
+
+- name: 'Services'
+  slug: 'services'
+
+- name: 'Support'
+  slug: 'support'

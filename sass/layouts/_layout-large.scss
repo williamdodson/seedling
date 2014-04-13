@@ -1,0 +1,78 @@
+// Desktop layout
+//////////////////////////////////////////////////////////////////////
+
+// Top
+//////////////////////////////////////////////////////////////////////
+
+.menu-main {
+  
+  li {
+    display: block;
+    float: left;
+    margin-right: 1em;
+    position: relative;
+    
+    &:hover {
+      
+      ul {
+        display: block;
+        opacity: 1;
+        z-index: 2;
+      }
+    }
+    
+    ul {
+      display: none;
+      left: 0;
+      opacity: 0;
+      position: absolute;
+  		text-align: left;
+  		top: 3em;
+  		@include transition-property(all);
+  		@include transition-duration($transition-speed);
+  		width: 300%;
+  		
+  		li {
+  		  display: block;
+  		  float: none;
+  		  margin-right: 0;
+  		  
+  		  &:first-child {
+  		    margin-top: 1.5em;
+  		  }
+  		  
+  		  &:last-child {
+  		    a {
+  		      border-bottom-right-radius: $base-border-radius;
+  		      border-bottom-left-radius: $base-border-radius;
+  		    }
+  		  }
+  		}
+    }// end ul
+  }// end li
+}// end menu-main
+
+.menu-eyebrow {
+  @include span-columns(6);
+  position: absolute;
+  right: 0;
+  top: 0;
+  
+  li {
+    border-right: 0.0625em dotted $color-primary-light;
+    display: inline-block;
+    margin-right: 0.375em;
+    padding-right: 0.625em;
+    
+    &:last-child {
+      border: none;
+      margin-right: 0;
+      padding-right: 0;
+    }
+    
+    a {
+      display: block;
+      text-align: center;
+    }
+  }
+}

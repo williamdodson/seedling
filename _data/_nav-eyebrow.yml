@@ -1,0 +1,9 @@
+# Define your eyebrow navigation links and their slugs here
+- name: 'Sign In'
+  slug: 'login'
+
+- name: 'Contact'
+  slug: 'contact'
+
+- name: 'Style Guide'
+  slug: 'style-guide'

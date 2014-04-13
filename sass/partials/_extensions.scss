@@ -1,0 +1,40 @@
+// sets a global padding
+%wrap {
+  padding: 1.5em flex-gutter(6);
+  
+  @include media($bp-xlg-val) {// remove the left/right padding on x-large breakpoint
+    padding: 1.5em 0;
+  }
+}
+
+// sets up the outer container ($max-width)
+%container {
+  @include outer-container;
+}
+
+// sets up the default hero styling
+%hero {
+  background: $color-secondary-pale;
+  border: 0.0625em solid $color-secondary-light;
+  border-radius: $base-border-radius;
+  margin-bottom: 1.5rem;
+  @include pad(1.5rem default 1.5rem default);
+  
+  h1, h2, h3 {
+    @extend .kilo;
+    color: $color-primary;
+  }
+}
+
+// visually hide elements
+%visuallyhidden {
+  margin: -1px;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip: rect(0, 0, 0, 0);
+  display: block;
+  position: absolute;
+}

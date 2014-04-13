@@ -1,0 +1,61 @@
+Templates:
+
+- profiles
+
+==========
+
+Elements:
+
+√ Labels
+- Tooltip, bubbles, etc?
+- Progress Bar
+- Breadcrumbs
+- Pagination
+√ Badges
+- Tabs
+- Buttons:
+  √ Switches
+  - Segmented (button groups)
+- Sliders
+- ICONS ++++++++++++++++++++
+  - Gear (settings):
+    - Wrench
+    - Cog (default)
+    - Dashboard
+  - Folder:
+    - Open
+    - Default
+  - Document(s)
+  - Add/Plus
+  - Subtract/Minus
+  - Envelope (email)
+  - Pencil (edit)
+  - Search
+  - Like
+    - Heart
+    - Star
+    - Checkmark
+  - Trash
+  - Home
+  - Download
+  - List
+  - Grid
+  - Volume (plus/minus)
+  - Tag(s)
+  - Print
+  - Playback:
+    - Step backward
+    - Fast backward
+    - Backward
+    - Play
+    - Pause
+    - Stop
+    - Forward
+    - Fast forward
+    - Step forward
+  - Info
+  - Question
+  - Share
+  - Filter
+- ***************************
+- WYSIWYG

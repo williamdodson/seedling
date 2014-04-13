@@ -1,0 +1,5 @@
+name: Seedling Prototype
+markdown: redcarpet
+destination: _wireframe
+encoding: UTF-8
+exclude: ['sass', 'README.md', 'notes.txt']

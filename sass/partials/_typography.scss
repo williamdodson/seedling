@@ -1,0 +1,329 @@
+// Typography overrides
+//////////////////////////////////////////////////////////////////////
+
+// Base HTML
+//////////////////////////////////////////////////////////////////////
+/* Define your base font-size here; most elements will inherit this. */
+:root, html, body {
+  font-size: 1em;
+  line-height: 1.5;
+}
+
+body {
+  background: $color-white;
+  font-family: $font-stack;
+}
+
+body, caption, th, td, input, textarea, select, option, legend, fieldset, h1, h2, h3, h4, h5, h6 {
+  font-size-adjust: 0.5;
+}
+
+/* Common margin-bottom for vertical rhythm. */
+h1, h2, h3, h4, h5, h6,
+ul, ol, dl,
+fieldset,
+p,
+table,
+pre,
+hr {
+  font-weight: normal;
+  margin-top: 0;
+  margin-bottom: 24px;
+  margin-bottom: 1.5rem;
+}
+
+/* These handle massive type, for less frequently occuring bits of text (e.g. in mastheads and banners). */
+.giga {
+  @include font-size(80px);
+  line-height: 1.2; /* 96px */
+}
+.mega {
+  @include font-size(64px);
+  line-height: 1.125; /* 72px */
+}
+.kilo {
+  @include font-size(48px);
+  line-height: 1; /* 48px */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: $color-secondary;
+  font-weight: normal;
+  margin: 0;
+  text-rendering: optimizeLegibility;
+}
+h5 {
+  text-transform: uppercase;
+}
+
+/* Define headings and their associated classes here. */
+h1, .alpha {
+  @include font-size(32px);
+  line-height: 1.5; /* 48px */
+}
+h2, .beta {
+  @include font-size(24px);
+  line-height: 1; /* 24px */
+}
+h3, .gamma {
+  @include font-size(20px);
+  line-height: 1.2; /* 24px */
+}
+h4, .delta {
+  @include font-size(18px);
+  line-height: 1.333; /* 24px */
+}
+h5, .epsilon {
+  @include font-size(16px);
+  line-height: 1.5; /* 24px */
+}
+h6, .zeta {
+  @include font-size(16px);
+  line-height: 1.5; /* 24px */
+}
+
+/*h1 {
+  color: $color-primary;
+  font-size: 2em;
+  line-height: 1.25;
+  margin-bottom: 0.5em;
+  
+  @include media($bp-med-val) {
+    font-size: 2.5em;
+    line-height: 1.125;
+  }
+  
+  @include media($bp-lg-val) {
+    font-size: 3em;
+    line-height: 1.05;
+  }
+}
+
+h2 {
+  font-size: 1.625em;
+  line-height: 1.15384615;
+  
+  @include media($bp-med-val) {
+    font-size: 2em;
+    line-height: 1.25;
+  }
+  
+  @include media($bp-lg-val) {
+    font-size: 2.25em;
+    line-height: 1.25;
+  }
+}
+
+h3 {
+  font-size: 1.375em;
+  line-height: 1.13636364;
+  
+  @include media($bp-med-val) {
+    font-size: 1.5em;
+    line-height: 1.25;
+  }
+  
+  @include media($bp-lg-val) {
+    font-size: 1.75em;
+    line-height: 1.25;
+  }
+}
+
+h4 {
+  font-size: 1.125em;
+  line-height: 1.11111111;
+  
+  @include media($bp-med-val) {
+    line-height: 1.22222222;
+  }
+}
+
+h5 {
+  color: $color-primary;
+  font-size: 1em;
+  text-transform: uppercase;
+}
+
+h6 {
+  font-size: 1em;
+  font-weight: bold;
+}
+
+p, dl, ol, ul {
+  margin: 0 0 1.5rem 0;
+  
+  @include media($bp-lg-val) {
+    margin-bottom: 1.375em;
+  }
+}*/
+
+dl {
+  dt {
+    @extend .delta;
+    color: $color-primary-light;
+    font-weight: normal;
+    margin-top: 0;
+    @include media($bp-med-val) {
+      line-height: 1.22222222;
+    }
+  }
+  dd {
+    margin-left: 0;
+    margin-bottom: 1.5rem;
+    p, ol, ul {
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+blockquote {
+  @extend .beta;
+  
+  @include media($bp-med-val) {
+    font-size: 1.5em;
+    line-height: 1.45833333;
+  }
+  
+  cite {
+    color: $color-secondary;
+    
+    &:before {
+      content: '— ';
+    }
+  }
+}
+
+pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+abbr {
+  cursor: help;
+}
+
+/* Smaller-than-body-copy sizes here. */
+small, .milli {
+  @include font-size(12px);
+  line-height: 2; /* 24px */
+}
+
+// Links
+//////////////////////////////////////////////////////////////////////
+a:link, a:visited {
+  color: $color-links;
+  @include transition-property(color, background);
+  @include transition-duration($transition-speed);
+}
+a:focus, a:hover, a:active {
+  color: $color-links-secondary;
+}
+a {
+  
+  abbr[title] {
+    border: none;
+    cursor: inherit;
+  }
+}
+
+// Tables
+//////////////////////////////////////////////////////////////////////
+table {
+  margin-bottom: 1.5rem;
+  width: 100%;
+  
+  th,
+  td {
+    padding: 0.25em 0.5em;
+  }
+  
+  thead {
+    tr {
+      background: $color-primary;
+      color: $color-white;
+      font-weight: bold;
+    }
+    
+    th {
+      border-right: 0.0625em solid $color-white;
+      
+      &:last-child {
+        border: none;
+      }
+    }
+  }
+  
+  tbody {
+    tr {
+      border-bottom: 0.0625em solid lighten($color-secondary-light, 12);
+    }
+    tr:nth-child(even) {
+      background: $color-secondary-pale;
+    }
+  }
+}
+
+// Misc
+//////////////////////////////////////////////////////////////////////
+hr {
+  border: none;
+  border-top: 0.0625em solid $color-secondary-light;
+}
+
+// Top
+//////////////////////////////////////////////////////////////////////
+.title {
+  @extend .gamma;
+  margin: 0;
+  
+  a {
+    color: $color-white;
+    text-decoration: none;
+  }
+}
+
+// Primary
+//////////////////////////////////////////////////////////////////////
+.primary {
+  
+  a {
+    text-decoration: underline;
+  }
+}
+
+// Bottom
+//////////////////////////////////////////////////////////////////////
+.bottom {
+  color: $color-white;
+  
+  a {
+    color: $color-secondary;
+    &:focus,
+    &:hover,
+    &:active {
+      color: $color-white;
+    }
+  }
+}
+
+// Classes and overrides
+//////////////////////////////////////////////////////////////////////
+// Box
+//--------------------------------------------------------------------
+.box {
+  
+  h2 {
+    font-size: 1.5em;
+    line-height: 1;
+    margin-bottom: 0.5em;
+  }
+}
+
+// Hero
+//--------------------------------------------------------------------
+.hero {
+  @extend %hero; // use an extension so that other elements can inherit the hero base styles
+}

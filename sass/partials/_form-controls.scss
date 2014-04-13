@@ -1,0 +1,119 @@
+// Form overrides (form styles handled by sass/partials/_formalize.scss)
+//////////////////////////////////////////////////////////////////////
+
+fieldset {
+  margin: 0 0 1.5rem 0;
+  @include pad(0.75rem default 0.75rem default);
+}
+
+textarea {
+  min-height: 12em;//192px
+}
+
+// Extra Form Controls and Styles
+//////////////////////////////////////////////////////////////////////
+$toggle-transition: 0.15s ease-out;
+
+.toggle {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  width: 80px;
+  height: 32px;
+  padding: 3px;
+  background-color: $color-white;
+  border-radius: 30px;
+  box-shadow: inset 0 -1px $color-white, inset 0 1px 1px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  @include linear-gradient(top, $color-secondary-pale, $color-white 25px);
+}
+
+.toggle-label {
+  @extend %visuallyhidden;
+}
+
+.toggle-input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+.toggle-text {
+  position: relative;
+  display: block;
+  height: inherit;
+  font-size: 10px;
+  text-transform: uppercase;
+  background: lighten($color-secondary-pale, 3);// default color
+  border-radius: inherit;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.12), inset 0 0 2px rgba(0, 0, 0, 0.15);
+  @include transition($toggle-transition);
+  @include transition-property(opacity background);
+
+  &:before, &:after {
+    position: absolute;
+    top: 50%;
+    margin-top: -0.5em;
+    line-height: 1;
+    @include transition(inherit);
+  }
+
+  &:before {
+    content: attr(data-off);
+    right: 11px;
+    color: $color-secondary;
+    text-shadow: 0 1px $color-white;
+  }
+
+  &:after {
+    content: attr(data-on);
+    left: 11px;
+    color: white;
+    text-shadow: 0 1px darken($color-success, 12);
+    opacity: 0;
+  }
+
+  .toggle-input:checked ~ & {
+    background: $color-success;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.15), inset 0 0 3px rgba(0, 0, 0, 0.2);
+
+    &:before { opacity: 0; }
+    &:after { opacity: 1; }
+  }
+}
+
+.toggle-slide {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 30px;
+  height: 30px;
+  background: $color-white;
+  border-radius: 30px;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+  @include linear-gradient(top, $color-white 40%, #f0f0f0);
+  @include transition(left #{$toggle-transition});
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -12px 0 0 -12px;
+    width: 24px;
+    height: 24px;
+    background: #f9f9f9;
+    border-radius: 24px;
+    box-shadow: inset 0 1px rgba(0, 0, 0, 0.1);
+    @include linear-gradient(top, lighten($color-secondary-pale, 3), $color-white);
+  }
+
+  .toggle-input:checked ~ & {
+    left: 46px;
+    box-shadow: -1px 1px 5px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.toggle-alt > .toggle-input:checked ~ .toggle-text { background: $color-links; }
+.toggle-dark > .toggle-input:checked ~ .toggle-text { background: $color-primary; }

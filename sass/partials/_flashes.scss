@@ -1,0 +1,11 @@
+// Flashes
+//////////////////////////////////////////////////////////////////////
+.flash-error {
+  @include flash(lighten($color-error, 42));
+}
+.flash-notice {
+  @include flash(lighten($color-warning, 35));
+}
+.flash-success {
+  @include flash(lighten($color-success, 42));
+}

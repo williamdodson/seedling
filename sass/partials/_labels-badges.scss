@@ -1,0 +1,53 @@
+// Labels
+//////////////////////////////////////////////////////////////////////
+.label {
+  @include label($color-primary);
+  
+  &.label-default {
+    @include label($color-primary);
+  }
+  
+  &.label-note {
+    @include label($color-links);
+  }
+  
+  &.label-success {
+    @include label($color-success);
+  }
+  
+  &.label-warning {
+    @include label($color-warning);
+  }
+  
+  &.label-danger {
+    @include label($color-error);
+  }
+}
+
+// Badges
+//////////////////////////////////////////////////////////////////////
+.badge {
+  background: $color-primary;
+  border-radius: 1em;
+  color: $color-white;
+  display: inline-block;
+  font-size: 1em;
+  line-height: 1;
+  margin-left: 0.25em;
+  min-width: 1.5rem;
+  padding: 0.1875rem 0.4375rem;
+  text-align: center;
+  vertical-align: baseline;
+  
+  &.badge-cool {
+    background: $color-success;
+  }
+  
+  &.badge-hot {
+    background: $color-error;
+  }
+  
+  &.badge-note {
+    background: $color-links;
+  }
+}

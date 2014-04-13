@@ -1,0 +1,29 @@
+// Navigation: Eyebrow Menu
+//////////////////////////////////////////////////////////////////////
+
+// Typographic Styles //
+.menu-eyebrow {
+  list-style: none;
+  text-align: right;
+  
+  a {
+    color: $color-secondary-light;
+    text-decoration: none;
+    
+    &:focus,
+    &:hover,
+    &:active {
+      color: $color-white;
+    }
+  }
+}
+
+// Layout-Specific Styles //
+.menu-eyebrow {
+  margin: 0;
+  padding: 0;
+  
+  a {
+    display: block;
+  }
+}

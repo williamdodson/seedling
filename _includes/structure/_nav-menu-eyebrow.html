@@ -1,0 +1,7 @@
+<ul class="menu-eyebrow">
+  {% for p in site.data._nav-eyebrow %}
+  <li>
+    <a href="/{{ p.slug }}/">{{ p.name }}</a>
+  </li>
+  {% endfor %}
+</ul>

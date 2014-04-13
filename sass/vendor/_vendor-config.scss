@@ -1,0 +1,13 @@
+// Vendor-Specific Configuration:
+// 
+// Include items here that rely on settings or code from one of the
+// vendor libraries in this folder
+//////////////////////////////////////////////////////////////////////
+// increase sidebar box padding by 2
+$sidebar-box-padding: flex-gutter(4); // uses Neat's flex-gutter() mixin
+
+// Set Bourbon’s $fg-column and $fg-gutter variables
+// to match what Bourbon Neat is doing
+//////////////////////////////////////////////////////////////////////
+$fg-column: $column;
+$fg-gutter: $gutter;

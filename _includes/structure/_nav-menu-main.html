@@ -1,0 +1,14 @@
+<ul class="menu-main">
+  {% for p in site.data._nav-menu %}
+  <li{% if p.subpages %} class="parent"{% endif %}>
+    <a href="{% if p.slug %}/{{ p.slug }}/{% else %}/{% endif %}">{{ p.name }}</a>
+    {% if p.subpages %}
+    <ul>
+      {% for s in p.subpages %}
+      <li><a href="/{{ p.slug }}/{{ s.slug }}/">{{ s.name }}</a></li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+  </li>
+  {% endfor %}
+</ul>
