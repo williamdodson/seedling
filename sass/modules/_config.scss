@@ -125,8 +125,8 @@ $font-sans: (
     line-height: 1
   ),
   large: (
-    font-size: 36,
-    line-height: 1.333333
+    font-size: 32,
+    line-height: 1.5
   ),
   x-large: (
     font-size: 48,
@@ -135,6 +135,10 @@ $font-sans: (
   xx-large: (
     font-size: 64,
     line-height: 1.125
+  ),
+  xxx-large: (
+    font-size: 80,
+    line-height: 1.2
   )
 );
 
