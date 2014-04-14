@@ -1584,7 +1584,7 @@ input[type="submit"].btn,
       color: #0a2900; }
 
 .top {
-  background: #8a8a8a; }
+  background: #525252; }
 
 .masthead {
   position: relative; }
@@ -1600,7 +1600,7 @@ input[type="submit"].btn,
     margin-right: 0; }
 
 .bottom {
-  background: #8a8a8a; }
+  background: #525252; }
 
 @media only screen and (min-width: 55em) {
   .menu-main li {
